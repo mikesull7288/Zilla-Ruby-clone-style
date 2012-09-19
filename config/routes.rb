@@ -1,4 +1,6 @@
 RubyZilla::Application.routes.draw do
+  get "select_products/select_products"
+  match "/ReadCatalog" => "select_products#read_catalog"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +50,7 @@ RubyZilla::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'select_products#select_products'
 
   # See how all your routes lay out with "rake routes"
 
