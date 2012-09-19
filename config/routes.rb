@@ -1,6 +1,8 @@
 RubyZilla::Application.routes.draw do
   get "select_products/select_products"
   match "/ReadCatalog" => "select_products#read_catalog"
+  match "/AddItemToCart" => "select_products#add_item_to_cart"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

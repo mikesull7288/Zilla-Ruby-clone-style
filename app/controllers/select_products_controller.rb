@@ -1,9 +1,6 @@
 class SelectProductsController < ApplicationController
   def read_catalog
-
-
 	catalog_cache = ZillaBackend::Catalog.read_from_cache
-
   	respond_to do |format|
       format.json { render :json => catalog_cache }
       format.html { render :json => catalog_cache }

@@ -1,104 +1,101 @@
+$(document).ready(function(){
+	$("#infor").hide();
+	$("#loading").show();
 
-
-	$(document).ready(function(){
-
-		$("#infor").hide();
-		$("#loading").show();
-		
-		getInitialCart();
-		
-		$.ajax("/ReadCatalog", {
-			type: "GET",
-			cache: false,
-			dataType: 'json',
-			success: listProducts,
-			failure: addError
-		});
-		$("#remove_all_button").click(function(){
-			emptyCart();
-		});
+	getInitialCart();
+	
+	$.ajax("/ReadCatalog", {
+		type: "GET",
+		cache: false,
+		dataType: 'json',
+		success: listProducts,
+		failure: addError
 	});
+	$("#remove_all_button").click(function(){
+		emptyCart();
+	});
+});
 	
-	function isNumberKey(evt){
-		var charCode = (evt.which) ? evt.which : event.keyCode
-		if (charCode > 31 && (charCode < 48 || charCode > 57))
-			return false;
-		return true;
-	}
+function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode
+	if (charCode > 31 && (charCode < 48 || charCode > 57))
+		return false;
+	return true;
+}
 	
-	var emptyCart = function(){
-		// $.getJSON("backend/index.php?type=EmptyCart",
-		// 	function(data){
-		// 		refreshCart(data.msg);
+var emptyCart = function(){
+	// $.getJSON("backend/index.php?type=EmptyCart",
+	// 	function(data){
+	// 		refreshCart(data.msg);
+	//      	}
+	// );
+};
+
+var getInitialCart = function(){
+	// $.getJSON("backend/index.php?type=GetInitialCart",
+	// 	function(data){
+	// 		if(!data.success) {	addError(data.msg); }
+	// 		else { refreshCart(data.msg); }
   //       	}
-		// );
-	}
+	// );
+};
 
-	var getInitialCart = function(){
-		// $.getJSON("backend/index.php?type=GetInitialCart",
-		// 	function(data){
-		// 		if(!data.success) {	addError(data.msg); }
-		// 		else { refreshCart(data.msg); }
-  //       	}
-		// );
-	}
-
-	var refreshCart = function(msg){
-		var html = "";
-
-		for(var i in msg[0].cart_items){
-			var citem = msg[0].cart_items[i];
-			html+="<li class='border_bottom_dashed'>";
-            html+="  <div class='rateplan_info'>";
-			html+="    <span class='rateplan_name'>"+citem.ProductName+" : "+citem.ratePlanName+"</span><br>";
-			if(citem.quantity!='null'){
-				html+="    <span class='rateplan_name'>"+citem.uom+": <input type='text' disabled='true' value='" +citem.quantity+ "' /></span><br>";
-			}
-            html+="  </div>";
-            html+="  <a href='javascript:' class='btn_submit item_button floatRight btn_remove' id='remove_item_"+citem.itemId+"'>Remove</a>";
-            html+="  <div class='clear-block'></div>";
-            html+="</li>";
+var refreshCart = function(msg){
+	var html = "";
+	for(var i in msg[0].cart_items){
+		var citem = msg[0].cart_items[i];
+		html+="<li class='border_bottom_dashed'>";
+        html+="  <div class='rateplan_info'>";
+		html+="    <span class='rateplan_name'>"+citem.ProductName+" : "+citem.ratePlanName+"</span><br>";
+		if(citem.quantity!='null'){
+			html+="    <span class='rateplan_name'>"+citem.uom+": <input type='text' disabled='true' value='" +citem.quantity+ "' /></span><br>";
 		}
-		$(".chosen_plans").html(html);
-		
-		$(".btn_remove").click(function(event){
-			removeFromCart(event);
-		});
+        html+="  </div>";
+        html+="  <a href='javascript:' class='btn_submit item_button floatRight btn_remove' id='remove_item_"+citem.itemId+"'>Remove</a>";
+        html+="  <div class='clear-block'></div>";
+        html+="</li>";
 	}
+	$(".chosen_plans").html(html);
+		
+	$(".btn_remove").click(function(event){
+		removeFromCart(event);
+	});
+};
 
-	var removeFromCart = function(event){
-		var buttonId = event.target.id;
-		var itemId = parseInt(buttonId.split('remove_item_')[1]);
+var removeFromCart = function(event){
+	var buttonId = event.target.id;
+	var itemId = parseInt(buttonId.split('remove_item_')[1]);
 
-		// $.getJSON("backend/index.php?type=RemoveItemFromCart", {itemId:itemId},
-		// 	function(data){
-		// 		if(!data.success) {
-		// 			addError(data.msg);
-		// 		}
-		// 		else {
-		// 			refreshCart(data.msg);
-		// 		}
+	// $.getJSON("backend/index.php?type=RemoveItemFromCart", {itemId:itemId},
+	// 	function(data){
+	// 		if(!data.success) {
+	// 			addError(data.msg);
+	// 		}
+	// 		else {
+	// 			refreshCart(data.msg);
+	// 		}
   //       	}
-		// );
-	};
+	// );
+};
 
-	var addToCart = function(event){
-		var rpId = event.target.getAttribute('id');
-		var rpQtyField = $('#qty_'+rpId);
-		var rpQty = null;
-		if(rpQtyField.size()>0)
-			rpQty = rpQtyField.val();
-		// $.getJSON("backend/index.php?type=AddItemToCart", {ratePlanId:rpId, quantity:rpQty},
-		// 	function(data){
-		// 		if(!data.success) {
-		// 			addError(data.msg);
-		// 		}
-		// 		else {
-		// 			refreshCart(data.msg);
-		// 		}
+var addToCart = function(event){
+	var rpId = event.target.getAttribute('id');
+	var rpQtyField = $('#qty_'+rpId);
+	var rpQty = null;
+	if(rpQtyField.size()>0)
+		rpQty = rpQtyField.val();
+
+	// $.getJSON("/AddItemToCart", {ratePlanId:rpId, quantity:rpQty},
+	// 	function(data){
+	// 		if(!data.success) {
+	// 			addError(data.msg);
+	// 		}
+	// 		else {
+	// 			refreshCart(data.msg);
+	// 		}
   //       	}
-		// );
-	};
+	// );
+};
 
 	var listProducts = function(data){
 
