@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$("#infor").hide();
-	$("#loading").show();
+	$(".loading").show();
 
 	getInitialCart();
 	
@@ -24,39 +24,40 @@ function isNumberKey(evt){
 }
 	
 var emptyCart = function(){
-	// $.getJSON("backend/index.php?type=EmptyCart",
-	// 	function(data){
-	// 		refreshCart(data.msg);
-	//      	}
-	// );
+	$.ajax("/EmptyCart", {
+		type: "GET",
+		dataType: 'json',
+		success: refreshCart,
+		failure: addError
+	});	
 };
 
 var getInitialCart = function(){
-	// $.getJSON("backend/index.php?type=GetInitialCart",
-	// 	function(data){
-	// 		if(!data.success) {	addError(data.msg); }
-	// 		else { refreshCart(data.msg); }
-  //       	}
-	// );
+	$.ajax("/GetInitialCart", {
+		type: "GET",
+		dataType: 'json',
+		success: refreshCart,
+		failure: addError
+	});
 };
 
 var refreshCart = function(msg){
+
 	var html = "";
-	for(var i in msg[0].cart_items){
-		var citem = msg[0].cart_items[i];
+	for(var i in msg){
+		var citem = msg[i];
 		html+="<li class='border_bottom_dashed'>";
         html+="  <div class='rateplan_info'>";
-		html+="    <span class='rateplan_name'>"+citem.ProductName+" : "+citem.ratePlanName+"</span><br>";
-		if(citem.quantity!='null'){
-			html+="    <span class='rateplan_name'>"+citem.uom+": <input type='text' disabled='true' value='" +citem.quantity+ "' /></span><br>";
+		html+="    <span class='rateplan_name'>"+citem["product_name"]+" : "+citem["rate_plan_name"]+"</span><br>";
+		if(citem["quantity"] != ""){
+			html+="    <span class='rateplan_name'>"+citem["uom"]+": <input type='text' disabled='true' value='" +citem["quantity"]+ "' /></span><br>";
 		}
         html+="  </div>";
-        html+="  <a href='javascript:' class='btn_submit item_button floatRight btn_remove' id='remove_item_"+citem.itemId+"'>Remove</a>";
+        html+="  <a href='javascript:' class='btn_submit item_button floatRight btn_remove' id='remove_item_"+citem["item_id"]+"'>Remove</a>";
         html+="  <div class='clear-block'></div>";
         html+="</li>";
 	}
-	$(".chosen_plans").html(html);
-		
+	$(".chosen_plans").html(html);		
 	$(".btn_remove").click(function(event){
 		removeFromCart(event);
 	});
@@ -65,41 +66,37 @@ var refreshCart = function(msg){
 var removeFromCart = function(event){
 	var buttonId = event.target.id;
 	var itemId = parseInt(buttonId.split('remove_item_')[1]);
-
-	// $.getJSON("backend/index.php?type=RemoveItemFromCart", {itemId:itemId},
-	// 	function(data){
-	// 		if(!data.success) {
-	// 			addError(data.msg);
-	// 		}
-	// 		else {
-	// 			refreshCart(data.msg);
-	// 		}
-  //       	}
-	// );
+	$.ajax("/RemoveItemFromCart", {
+		data:
+		{item_id:itemId},
+		type: "GET",
+		dataType: 'json',
+		success: refreshCart,
+		failure: addError
+	});
 };
 
 var addToCart = function(event){
+	
 	var rpId = event.target.getAttribute('id');
 	var rpQtyField = $('#qty_'+rpId);
 	var rpQty = null;
 	if(rpQtyField.size()>0)
 		rpQty = rpQtyField.val();
 
-	// $.getJSON("/AddItemToCart", {ratePlanId:rpId, quantity:rpQty},
-	// 	function(data){
-	// 		if(!data.success) {
-	// 			addError(data.msg);
-	// 		}
-	// 		else {
-	// 			refreshCart(data.msg);
-	// 		}
-  //       	}
-	// );
+	$.ajax("/AddItemToCart", {
+		data:
+		{rate_plan_id:rpId, quantity:rpQty},
+		type: "GET",
+		dataType: 'json',
+		success: refreshCart,
+		failure: addError
+	});
 };
 
 	var listProducts = function(data){
 
-		$("#loading").fadeOut('fast');
+		$(".loading").fadeOut('fast');
 		
 		var html = "";
 		for(var pgroupKey in data){
@@ -124,11 +121,11 @@ var addToCart = function(event){
 					html += "          <div class='rateplan_info' >";
 					html += "           <span class='rateplan_name'>"+rp["product_name"]+" : "+rp["name"]+"</span><br>";
 					html += "          	<span class='rateplan_description'>"+rp["description"]+"</span> ";
-					if(rp.quantifiable)
-						html += "		<br># "+ rp["Uom"] +": <input type='text' class='w80' id='qty_"+rp["Id"]+"' value='1' onkeypress='return isNumberKey(event)' />";
+					if(rp["quantifiable"])
+						html += "		<br># "+ rp["uom"] +": <input type='text' class='w80' id='qty_"+rp["id"]+"' value='1' onkeypress='return isNumberKey(event)' />";
 					html += "          </div>";
 					html += "          <div class='item_button_block'>";
-					html += "           <a href='javascript:' class='btn_submit item_button btn_add' id='"+rp["Id"]+"' >Add</a>";
+					html += "           <a href='javascript:' class='btn_submit item_button btn_add' id='"+rp["id"]+"' >Add</a>";
 					html += "          </div>";
 					html += "          <div class='clear-block'></div>";
 					html += "        </li>";
