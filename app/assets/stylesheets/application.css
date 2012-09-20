@@ -77,7 +77,7 @@ html {
 }
 
 #header .rays {
-     background: url("assets/rays.png") no-repeat scroll 50% 0pt transparent;
+     /*background: url("assets/rays.png") no-repeat scroll 50% 0pt transparent;*/
 }
 
 #header .header-area {
@@ -188,7 +188,7 @@ html {
 }
 
 .portfolio_one_column_last {
-     background: url("../images/global-sprite.png") no-repeat scroll 0pt -31px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll 0pt -31px transparent;*/
      float: right;
      height: 602px;
      position: relative;
@@ -1030,7 +1030,7 @@ html {
 }
 
 .jquery-pager a {
-     background: url("../images/global-sprite.png") no-repeat scroll -740px -179px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -740px -179px transparent;*/
      display: inline-block;
      height: 15px;
      margin-right: 12px;
@@ -1040,7 +1040,7 @@ html {
 }
 
 .jquery-pager .activeSlide {
-     background: url("../images/global-sprite.png") no-repeat scroll -725px -179px transparent;
+     /*ackground: url("../images/global-sprite.png") no-repeat scroll -725px -179px transparent;*/
 }
 
 .home_video_preload {
@@ -1071,7 +1071,7 @@ html {
 }
 
 .home-bnr-jquery .home-banner-sub {
-     background: url("../images/global-sprite.png") no-repeat scroll 0pt -1188px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll 0pt -1188px transparent;*/
      height: 270px;
      position: absolute;
      right: 35px;
@@ -1546,7 +1546,7 @@ html {
 }
 
 .callout_button {
-     background: url("../images/global-sprite-gradients.png") repeat-x scroll 0pt 0pt #999999;
+     /*background: url("../images/global-sprite-gradients.png") repeat-x scroll 0pt 0pt #999999;*/
      border: 1px solid #999999;
      color: #333333;
      cursor: pointer;
@@ -2395,7 +2395,7 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 }
 
 .sharelink_small {
-     background: url("../images/global-sprite.png") no-repeat scroll 0pt 0pt transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll 0pt 0pt transparent;*/
      display: block;
      float: right;
      height: 30px;
@@ -2406,7 +2406,7 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 }
 
 .sharelink_big {
-     background: url("../images/global-sprite.png") no-repeat scroll -66px 0pt transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -66px 0pt transparent;*/
      display: block;
      height: 30px;
      outline: medium none;
@@ -2420,7 +2420,7 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 }
 
 .post_thumb {
-     background: url("../images/global-sprite.png") no-repeat scroll -1px -921px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -1px -921px transparent;*/
      height: 255px;
      margin: 0pt 0pt 7px;
      position: relative;
@@ -2459,7 +2459,7 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 }
 
 .comment-gravatar {
-     background: url("../images/global-sprite.png") no-repeat scroll -731px -529px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -731px -529px transparent;*/
      float: left;
      height: 80px;
      margin: 15px 0pt 0pt 15px;
@@ -2612,7 +2612,7 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 }
 
 .comment-input, .comment-textarea {
-     background: url("../images/global-sprite.png") no-repeat scroll 0pt -669px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll 0pt -669px transparent;*/
      border: 0pt none;
      font: 12px "lucida grande","helvetica neue",Helvetica,Arial,Verdana,sans-serif;
      height: 39px;
@@ -3092,7 +3092,7 @@ table td, table th {
 }
 
 #main .karma-pages a, #main .karma-pages a:link, #main .karma-pages a:visited #main .wp-pagenavi a, #main .wp-pagenavi a:link, #main .wp-pagenavi a:visited {
-     background: url("../images/global-sprite.png") no-repeat scroll -556px -639px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -556px -639px transparent;*/
      color: #666666;
      display: inline-block;
      margin-right: 6px;
@@ -3102,7 +3102,7 @@ table td, table th {
 }
 
 #main .karma-pages a:hover, #main .wp-pagenavi a:hover {
-     background: url("../images/global-sprite.png") no-repeat scroll -585px -639px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -585px -639px transparent;*/
      margin-right: 6px;
 }
 
@@ -3378,39 +3378,39 @@ table#wp-calendar td {
 }
 
 .social_icons .rss {
-     background: url("../images/global-sprite.png") no-repeat scroll -786px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -786px -27px transparent;*/
 }
 
 .social_icons .twitter {
-     background: url("../images/global-sprite.png") no-repeat scroll -857px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -857px -27px transparent;*/
 }
 
 .social_icons .facebook {
-     background: url("../images/global-sprite.png") no-repeat scroll -822px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -822px -27px transparent;*/
 }
 
 .social_icons .flickr {
-     background: url("../images/global-sprite.png") no-repeat scroll -893px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -893px -27px transparent;*/
 }
 
 .social_icons .youtube {
-     background: url("../images/global-sprite.png") no-repeat scroll -929px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -929px -27px transparent;*/
 }
 
 .social_icons .linkedin {
-     background: url("../images/global-sprite.png") no-repeat scroll -964px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -964px -27px transparent;*/
 }
 
 .social_icons .foursquare {
-     background: url("../images/global-sprite.png") no-repeat scroll -1000px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -1000px -27px transparent;*/
 }
 
 .social_icons .delicious {
-     background: url("../images/global-sprite.png") no-repeat scroll -1035px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -1035px -27px transparent;*/
 }
 
 .social_icons .digg {
-     background: url("../images/global-sprite.png") no-repeat scroll -1071px -27px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -1071px -27px transparent;*/
 }
 
 #sidebar .sidebar-widget .social_icons, #sidebar .social_icons {
@@ -3444,39 +3444,39 @@ table#wp-calendar td {
 }
 
 .top-block .toolbar-right .social_icons .rss, .top-block .toolbar-left .social_icons .rss {
-     background: url("../images/global-sprite.png") no-repeat scroll -799px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -799px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .twitter, .top-block .toolbar-left .social_icons .twitter {
-     background: url("../images/global-sprite.png") no-repeat scroll -850px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -850px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .facebook, .top-block .toolbar-left .social_icons .facebook {
-     background: url("../images/global-sprite.png") no-repeat scroll -824px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -824px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .flickr, .top-block .toolbar-left .social_icons .flickr {
-     background: url("../images/global-sprite.png") no-repeat scroll -875px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -875px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .youtube, .top-block .toolbar-left .social_icons .youtube {
-     background: url("../images/global-sprite.png") no-repeat scroll -900px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -900px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .linkedin, .top-block .toolbar-left .social_icons .linkedin {
-     background: url("../images/global-sprite.png") no-repeat scroll -925px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -925px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .foursquare, .top-block .toolbar-left .social_icons .foursquare {
-     background: url("../images/global-sprite.png") no-repeat scroll -951px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -951px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .delicious, .top-block .toolbar-left .social_icons .delicious {
-     background: url("../images/global-sprite.png") no-repeat scroll -976px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -976px -75px transparent;*/
 }
 
 .top-block .toolbar-right .social_icons .digg, .top-block .toolbar-left .social_icons .digg {
-     background: url("../images/global-sprite.png") no-repeat scroll -1001px -75px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -1001px -75px transparent;*/
 }
 
 .twitterList {
@@ -3553,7 +3553,7 @@ table#wp-calendar td {
 }
 
 .testimonial-pager a {
-     background: url("../images/global-sprite.png") no-repeat scroll -737px -197px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -737px -197px transparent;*/
      display: inline-block;
      height: 12px;
      margin-right: 10px;
@@ -3563,7 +3563,7 @@ table#wp-calendar td {
 }
 
 .testimonial-pager .activeSlide {
-     background: url("../images/global-sprite.png") no-repeat scroll -725px -197px transparent;
+     /*background: url("../images/global-sprite.png") no-repeat scroll -725px -197px transparent;*/
 }
 
 #content .post_content .testimonials blockquote, #content .post_content .testimonials_static blockquote {
@@ -4464,8 +4464,8 @@ A:hover {text-decoration:none}
 /*---------------------------------------------------------------*/
 /* HEADER 
 /*---------------------------------------------------------------*/
-#header .header-holder {background:#19292E url(../images/karma-teal-grey/bg-header-holder.jpg) 0 0 repeat-x !important;}
-.big-banner #header .header-holder {background:#19292E url(../images/karma-teal-grey/bg-big-header-holder.png) 0 0 repeat-x !important;}
+#header .header-holder {background:#19292E url(../assets/karma-teal-grey/bg-header-holder.jpg) 0 0 repeat-x !important;}
+.big-banner #header .header-holder {background:#19292E url(../assets/karma-teal-grey/bg-big-header-holder.png) 0 0 repeat-x !important;}
 .top-block {background:#19292E !important;}
 
 
@@ -4473,8 +4473,8 @@ A:hover {text-decoration:none}
 /*---------------------------------------------------------------*/
 /* FOOTER
 /*---------------------------------------------------------------*/
-#footer {background:#19292E url(../images/karma-teal-grey/bg-footer.jpg) repeat-x !important;}
-#footer_bottom {background:#111C20 url(../images/karma-teal-grey/bg-footer-bottom.jpg) repeat-x !important;color: #868686 !important;}
+#footer {background:#19292E url(../assets/karma-teal-grey/bg-footer.jpg) repeat-x !important;}
+#footer_bottom {background:#111C20 url(../assets/karma-teal-grey/bg-footer-bottom.jpg) repeat-x !important;color: #868686 !important;}
 #footer .contact-form label span, #footer .twitterList li .tweet_days {color:#CCC !important;}
 
 
@@ -4498,8 +4498,8 @@ A:hover {text-decoration:none}
 #menu-main-nav li {background:url(../images/_global/seperator-main-nav.png) 0 50% no-repeat !important;}
 
 /* dropdown */
-#menu-main-nav .drop .t {background:url(../images/_global/global-sprite.png) -960px -1782px no-repeat !important;}
-#menu-main-nav .drop .b {background:url(../images/_global/global-sprite.png) -960px -1793px no-repeat !important;}
+/*#menu-main-nav .drop .t {background:url(../images/_global/global-sprite.png) -960px -1782px no-repeat !important;}*/
+/*#menu-main-nav .drop .b {background:url(../images/_global/global-sprite.png) -960px -1793px no-repeat !important;}*/
 #menu-main-nav .drop .c, #menu-main-nav li.parent:hover {background:#111C20 !important;}
 /* IE only - un-comment for rounded corners 
 *:first-child+html #menu-main-nav li.parent:hover {background:url(../images/_global/global-sprite.png) -960px -1721px no-repeat !important;}

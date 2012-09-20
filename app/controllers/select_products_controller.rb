@@ -1,5 +1,4 @@
 class SelectProductsController < ApplicationController
-  
   def read_catalog
 	  catalog_cache = ZillaBackend::Catalog.read_from_cache
   	respond_to do |format|
@@ -36,7 +35,7 @@ class SelectProductsController < ApplicationController
   def remove_item_from_cart
     cart = session[:cart]
 
-    resp = cart.remove_cart_item( params[:item_id] )
+    resp = cart.remove_cart_item( params[:item_id].to_i )
     
     session[:cart] = cart
     respond_to do |format|

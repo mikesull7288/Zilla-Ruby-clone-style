@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:zuorasc/Zilla-RubyBackendGem.git
-  revision: c24e90a8052c57e6c9f1ff9d0f7f2df9686ab71b
+  revision: 5995332bf553ab7f73c1e3f1743ea21d821d30fd
   specs:
     zillabackend (0.0.0)
 
