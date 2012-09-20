@@ -42,7 +42,7 @@ var getInitialCart = function(){
 };
 
 var refreshCart = function(msg){
-
+alert("adding to cart");
 	var html = "";
 	for(var i in msg){
 		var citem = msg[i];
@@ -145,6 +145,7 @@ var addToCart = function(event){
 	};
 
 	var addError = function(emsg){
+		
 		$("#infor").append(emsg);
 		$("#infor").show();
 	};

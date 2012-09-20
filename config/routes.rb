@@ -1,5 +1,7 @@
 RubyZilla::Application.routes.draw do
+  get "subscribe/subscribe"
   get "select_products/select_products"
+  
   match "/ReadCatalog" => "select_products#read_catalog"
   match "/AddItemToCart" => "select_products#add_cart_item"
   match "/EmptyCart" => "select_products#empty_cart"
