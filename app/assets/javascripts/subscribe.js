@@ -12,6 +12,14 @@ $(document).ready(function(){
 	
 var previewCurrentCart = function(){
 	//Get cart items
+	$.ajax("/GetInitialCart", {
+		type: "GET",
+		dataType: 'json',
+		success: refreshCart,
+		failure: addError
+	});
+	//do subscribe preview
+	
 	/*
 	$.getJSON("backend/index.php?type=GetInitialCart",
 		function(data){

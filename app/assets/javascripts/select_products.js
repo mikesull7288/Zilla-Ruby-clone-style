@@ -41,27 +41,6 @@ var getInitialCart = function(){
 	});
 };
 
-var refreshCart = function(msg){
-alert("adding to cart");
-	var html = "";
-	for(var i in msg){
-		var citem = msg[i];
-		html+="<li class='border_bottom_dashed'>";
-        html+="  <div class='rateplan_info'>";
-		html+="    <span class='rateplan_name'>"+citem["product_name"]+" : "+citem["rate_plan_name"]+"</span><br>";
-		if(citem["quantity"] != ""){
-			html+="    <span class='rateplan_name'>"+citem["uom"]+": <input type='text' disabled='true' value='" +citem["quantity"]+ "' /></span><br>";
-		}
-        html+="  </div>";
-        html+="  <a href='javascript:' class='btn_submit item_button floatRight btn_remove' id='remove_item_"+citem["item_id"]+"'>Remove</a>";
-        html+="  <div class='clear-block'></div>";
-        html+="</li>";
-	}
-	$(".chosen_plans").html(html);		
-	$(".btn_remove").click(function(event){
-		removeFromCart(event);
-	});
-};
 
 var removeFromCart = function(event){
 	var buttonId = event.target.id;
@@ -145,7 +124,7 @@ var addToCart = function(event){
 	};
 
 	var addError = function(emsg){
-		
+
 		$("#infor").append(emsg);
 		$("#infor").show();
 	};
