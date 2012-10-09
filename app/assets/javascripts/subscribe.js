@@ -10,6 +10,24 @@ $(document).ready(function(){
 	displayNewIframe();
 });
 	
+function handlePreview(msg){
+	alert( msg.toSource() );
+	if(!msg.success) {
+		var errorMessage = msg.error;
+		if(msg.error=='EMPTY_CART'){
+			errorMessage = 'WARNING: Please add at least one item to your cart before subscribing.';
+		} else if(msg.error=='RATE_PLAN_DOESNT_EXIST'){
+			errorMessage = 'WARNING: There was an error calculating your total. One or more of your selected items may no longer be in our system. Please remove it before continuing.';
+		} else if(msg.error=='RATE_PLAN_EXPIRED'){
+			errorMessage = 'WARNING: One of your selected items is no longer being offered. Please remove it before continuing.';
+		}
+		alert( errorMessage );
+	} 
+	else {
+		$('.subtotal_display').text("First Invoice Total Before Tax: $" +msg["invoice_amount"] );
+		$('.subtotal_display').show();
+	}
+}
 var previewCurrentCart = function(){
 	//Get cart items
 	$.ajax("/GetInitialCart", {
@@ -19,35 +37,14 @@ var previewCurrentCart = function(){
 		failure: addError
 	});
 	//do subscribe preview
+	$('.subtotal_display').hide();
+	$.ajax("/PreviewCurrentCart",{
+		type: "GET",
+		dataType: 'json',
+		success: handlePreview,
+		failure: addError
+	});
 	
-	/*
-	$.getJSON("backend/index.php?type=GetInitialCart",
-		function(data){
-			refreshCart(data.msg);
-			//Preview subscription with cart items
-			$('.subtotal_display').hide();
-			$.getJSON("backend/index.php?type=PreviewCurrentCart",
-				function(data2){
-					var msg = data2.msg[0];
-					if(!msg.success) {
-						var errorMessage = msg.error;
-						if(msg.error=='EMPTY_CART'){
-							errorMessage = 'WARNING: Please add at least one item to your cart before subscribing.';
-						} else if(msg.error=='RATE_PLAN_DOESNT_EXIST'){
-							errorMessage = 'WARNING: There was an error calculating your total. One or more of your selected items may no longer be in our system. Please remove it before continuing.';
-						} else if(msg.error=='RATE_PLAN_EXPIRED'){
-							errorMessage = 'WARNING: One of your selected items is no longer being offered. Please remove it before continuing.';
-						}
-						alert( errorMessage );
-					} else {
-						$('.subtotal_display').text("First Invoice Total Before Tax: $" +msg.invoiceAmount );
-						$('.subtotal_display').show();
-					}
-				}
-			);
-       	}
-	);
-	*/
 }
 	
 var refreshCart = function(msg){
