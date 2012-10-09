@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 
 //Takes in a Zuora data format, and returns a readable date string
 function formatZDate(dateStr){
