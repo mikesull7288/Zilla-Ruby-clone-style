@@ -5,13 +5,13 @@ $(document).ready(function(){
 	$(".email_avail").hide();
 	$(".email_unavail").hide();
 	$('.subtotal_display').hide();
-		
+	
 	previewCurrentCart();
 	displayNewIframe();
 });
 	
 function handlePreview(msg){
-	alert( msg.toSource() );
+	
 	if(!msg.success) {
 		var errorMessage = msg.error;
 		if(msg.error=='EMPTY_CART'){
@@ -48,14 +48,15 @@ var previewCurrentCart = function(){
 }
 	
 var refreshCart = function(msg){
+
 	var html = "";
-	for(var i in msg[0].cart_items){
-		var citem = msg[0].cart_items[i];
+	for(var i in msg){
+		var citem = msg[i];
 		html+="<li class='border_bottom_dashed'>";
            html+="  <div class='rateplan_info'>";
-		html+="    <span class='rateplan_name'>"+citem.ProductName+" : "+citem.ratePlanName+"</span><br>";
-		if(citem.quantity!='null'){
-			html+="    <span class='rateplan_name'>"+citem.uom+": <input type='text' disabled='true' value='" +citem.quantity+ "' /></span><br>";
+		html+="    <span class='rateplan_name'>"+citem["product_name"]+" : "+citem["rate_plan_name"]+"</span><br>";
+		if(citem["quantity"]!='null'){
+			html+="    <span class='rateplan_name'>"+citem["uom"]+": <input type='text' disabled='true' value='" +citem["quantity"]+ "' /></span><br>";
 		}
         html+="  </div>";
         html+="  <div class='clear-block'></div>";
