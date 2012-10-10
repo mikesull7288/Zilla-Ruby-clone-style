@@ -6,9 +6,9 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-#gem 'zapi',:git => 'git@github.com:mdemin914/zapi.git', :require => 'zapi'
-gem 'zuora', git: 'git@github.com:zuorasc/zuora.git', require: 'zuora'
-gem 'zillabackend', git: 'git@github.com:zuorasc/Zilla-RubyBackendGem.git', require: 'zillabackend'
+
+gem 'zuora', git: 'https://github.com/zuorasc/zuora.git', require: 'zuora'
+gem 'zillabackend', git: 'https://github.com/zuorasc/Zilla-RubyBackendGem.git', require: 'zillabackend'
 
 # Gems used only for assets and not required
 # in production environments by default.

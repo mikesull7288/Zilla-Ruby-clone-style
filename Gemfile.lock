@@ -1,11 +1,11 @@
 GIT
-  remote: git@github.com:zuorasc/Zilla-RubyBackendGem.git
-  revision: d91914a3d05a1adb60c83bb7ed23f0bc5ecec141
+  remote: https://github.com/zuorasc/Zilla-RubyBackendGem.git
+  revision: c1fca024a2db7680be17c655a37fa368452766cf
   specs:
     zillabackend (0.0.0)
 
 GIT
-  remote: git@github.com:zuorasc/zuora.git
+  remote: https://github.com/zuorasc/zuora.git
   revision: 21bc7574f5f3b7fb6abdb24ba8e97fd45581927b
   specs:
     zuora (0.0.1)
