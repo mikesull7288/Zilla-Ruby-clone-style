@@ -1,0 +1,155 @@
+<% content_for :javascript_includes do %>
+  <%= javascript "select_products.js" %>
+<% end %>
+<body>
+<div id="web_main">
+    <div id="main" class="edit_dv">
+        <noscript>
+            <div class="error_message"> Javascript must be enabled to use this page. </div>
+        </noscript>
+        
+        <div class="titleBox">
+            <h3>Account Summary:</h3>
+            
+            <div class="summary-box account-summary">
+
+<div class="loading"> loading... </div>
+                <table class='account-summary-table'>
+                    <tr>
+                        <td width="15%">Account Name:</td>
+                        <td width="35%"><b><span class='account_name'></span></b></td>
+                        <td width="15%">Last Payment:</td>
+                        <td width="35%"><b><span class='last_payment_amount'></span></b></td>
+                    </tr>
+                    <tr>
+                        <td>Account Balance:</td>
+                        <td><b><span class='account_balance'></span></b></td>
+                        <td>Last Payment Date:</td>
+                        <td><b><span class='last_payment_date'></span></b></td>
+                    </tr>
+                    <tr>
+                        <td>Last Invoice:</td>
+                        <td><b><span class='last_invoice_date'></span></b></td>
+                        <td colspan='2'><a href="javascript:" class="btn_submit item_button view_last_pdf" style="margin-top: 5px">View Latest Invoice as PDF</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="titleBox">
+            <a href="javascript:" class="btn_submit item_button add_pm floatRight" style="margin-top: 8px;margin-right: 8px;">New Payment Method</a>
+            <h3>Payment Methods:</h3>
+
+            <div class="summary-box paymentmethod-summary">
+              <div class="loading"> loading... </div>
+                <table class='paymentmethod-summary-table'>
+                </table>
+              </div>
+            <div class="innerBlock add_payment_method_panel">
+                <h4>New Credit Card</h4>
+                <div id="infor" class="error_message clear-block"></div>
+                <iframe id="z_hppm_iframe" frameborder="0" name="z_hppm_iframe" width="600" height="460" src="" ></iframe>
+                <br>
+                <a href="javascript:" class="btn_submit item_button new_pm" >Add</a>
+                <a href="javascript:" class="btn_submit item_button cancel_pm" >Cancel</a>
+            </div>
+        </div>
+
+        <div class="titleBox">
+            <a href="javascript:" class="btn_submit item_button update_contact floatRight" style="margin-top: 8px;margin-right: 8px;">Update Contact Info</a>
+            <a href="javascript:" class="btn_submit item_button save_changes floatRight" style="margin-top: 8px;margin-right: 8px;">Save Changes</a>
+
+            <h3>Contact Info:</h3>
+            <div class="success_message"></div>
+            <div class="error_message"></div>
+
+            <div class="summary-box contact-summary">
+
+<div class="loading"> loading... </div>
+                
+                <table class='contact-summary-table-output'>
+                    <tr>
+                        <td width="15%">First Name:</td>
+                        <td width="35%"><b><span class='first_name'></span></b></td>
+                        <td width="15%">State:</td>
+                        <td width="35%"><b><span class='mailing_state'></span></b></td>
+                    </tr>
+                    <tr>
+                        <td width="15%">Last Name:</td>
+                        <td width="35%"><b><span class='last_name'></span></b></td>
+                        <td width="15%">Postal Code:</td>
+                        <td width="35%"><b><span class='mailing_code'></span></b></td>
+                    </tr>
+                    <tr>
+                        <td width="15%">Address:</td>
+                        <td width="35%"><b><span class='mailing_address'></span></b></td>
+                        <td width="15%">Country:</td>
+                        <td width="35%"><b><span class='mailing_country'></span></b></td>
+                    </tr>
+                    <tr>
+                        <td width="15%">City:</td>
+                        <td width="35%"><b><span class='mailing_city'></span></b></td>
+                        <td width="15%"></td>
+                        <td width="35%"><b></b></td>
+                    </tr>
+                </table>
+
+                <table class='contact-summary-table-input'>
+                    <tr>
+                        <td width="15%">First Name:</td>
+                        <td width="35%"><input type="text" class="first_name" value="" /></td>
+                        <td width="15%">State:</td>
+                        <td width="35%"><input type="text" class="mailing_state" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td width="15%">Last Name:</td>
+                        <td width="35%"><input type="text" class="last_name" value="" /></td>
+                        <td width="15%">Postal Code:</td>
+                        <td width="35%"><input type="text" class="mailing_code" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td width="15%">Address:</td>
+                        <td width="35%"><input type="text" class="mailing_address" value="" /></td>
+                        <td width="15%">Country:</td>
+                        <td width="35%"><input type="text" class="mailing_country" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td width="15%">City:</td>
+                        <td width="35%"><input type="text" class="mailing_city" value="" /></td>
+                        <td width="15%"></td>
+                        <td width="35%"><b></b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="titleBox">
+            <a href="amend.html" class="btn_submit item_button change_plan floatRight" style="margin-top: 8px;margin-right: 8px;">Change Plan</a>
+            <h3>Subscription Information:</h3>
+
+            <div class="summary-box subscription-summary">
+
+              <div class="loading"> loading... </div>
+
+<div class='subscription-summary-table'>
+                  <table>
+                        <tr>
+                            <td width="15%">Subscription Start Date:</td>
+                            <td width="35%"><b><span class='subscription_start_date'></span></b></td>
+                            <td width="15%"></td>
+                            <td width="35%"></td>
+                        </tr>
+                    </table>
+    
+                    <div class="innerBlock">
+                        <ul class="chosen_plans">
+                        </ul>
+                        <ul class="removed_plans">
+                        </ul>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

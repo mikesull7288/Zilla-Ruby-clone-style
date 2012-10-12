@@ -1,4 +1,6 @@
 RubyZilla::Application.routes.draw do
+  get "account_manager/account_view"
+
   get "subscribe/subscribe"
   get "select_products/select_products"
   
@@ -8,7 +10,13 @@ RubyZilla::Application.routes.draw do
   match "/GetInitialCart" => "select_products#get_initial_cart"  
   match "/RemoveItemFromCart" => "select_products#remove_item_from_cart"
   match "/GetCart" => "select_products#get_cart"
-  match "/PreviewCurrentCart" => "subscribe#preview_current_cart"  
+  match "/PreviewCurrentCart" => "subscribe#preview_current_cart"
+  match "/GetNewIframeSrc" => "subscribe#get_iframe_url"
+  match "/CheckEmailAvailability" => "subscribe#check_email_availability"
+  match "/SubscribeWithCurrentCart" => "subscribe#subscribe"
+  match "/IsUserLoggedIn" => "account_manager#is_user_logged_in"
+  match '/callback' => 'subscribe#callback'
+  match '/subscription' => 'payment#subscription'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

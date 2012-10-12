@@ -1,12 +1,12 @@
 GIT
   remote: https://github.com/zuorasc/Zilla-RubyBackendGem.git
-  revision: c1fca024a2db7680be17c655a37fa368452766cf
+  revision: a44451048bbfab9b332072aedf597e05015983e1
   specs:
     zillabackend (0.0.0)
 
 GIT
   remote: https://github.com/zuorasc/zuora.git
-  revision: 21bc7574f5f3b7fb6abdb24ba8e97fd45581927b
+  revision: ef5410a3a1e57dc902718598e2b49b1f82686289
   specs:
     zuora (0.0.1)
       activemodel (>= 3.0.0, < 4.0.0)
@@ -137,6 +137,7 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.3)
     wasabi (2.5.1)
       httpi (~> 1.0)
       nokogiri (>= 1.4.0)
@@ -152,5 +153,6 @@ DEPENDENCIES
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)
+  uuidtools
   zillabackend!
   zuora!

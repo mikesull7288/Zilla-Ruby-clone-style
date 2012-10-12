@@ -9,7 +9,7 @@ gem 'sqlite3'
 
 gem 'zuora', git: 'https://github.com/zuorasc/zuora.git', require: 'zuora'
 gem 'zillabackend', git: 'https://github.com/zuorasc/Zilla-RubyBackendGem.git', require: 'zillabackend'
-
+gem 'uuidtools'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

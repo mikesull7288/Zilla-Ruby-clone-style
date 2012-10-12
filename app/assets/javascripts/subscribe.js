@@ -71,13 +71,18 @@ var refreshCart = function(msg){
 }
 
 var displayNewIframe = function(){
-	/*
-	$.getJSON("backend/index.php?type=GetNewIframeSrc",
-		function(data){
-			$("#z_hppm_iframe").attr('src', data.msg[0]);
-       	}
-	);
-	*/
+	
+	$.ajax("/GetNewIframeSrc", {
+		type: "GET",
+		dataType: 'json',
+		success: showIframe,
+		failure: addError
+	});
+
+}
+
+var showIframe = function(msg){
+	$("#z_hppm_iframe").attr('src', msg);
 }
 
 function onsubmit_action() {
@@ -85,50 +90,56 @@ function onsubmit_action() {
 }
 	
 function hostedpagecallback_success(ref_id) {
+
 	createSubscription(ref_id);
 }
 
-function createSubscription(ref_id){
-	var uEmail = $('#email').val();
-	/*
-	$.getJSON("backend/index.php?type=SubscribeWithCurrentCart", {userEmail: uEmail, pmId: ref_id},
-		function(data){
-			console.log(data);
-			if(!data.success) {
-				alert(data.msg[0].msg);
+function handleSubcsribeRes(data){
+		var result = data[0];
+		if(result["success"] != null && result["success"] == true){
+			window.location.replace('/account_manager/account_view');
+		} 
+		else {
+				var html = '';
+				html = 'Your order was not submitted for the following reasons:<br><ul>' + html;
+				var error = '';
+				if(result["success"] == false) error = result["errors"]["message"];
+				if(result=='DUPLICATE_EMAIL') error = 'Your email is already in use.';
+				if(result=='USER_EMAIL_NOT_PROVIDED') error = 'Please enter your email address.';
+
+				html += '<li>' + error + '</li>';
+				html += '</ul>';
+				$('.error_message').html(html);
+				$("#infor").show();
 				displayNewIframe();
-			}
-			else {
-				var result = data.msg[0].result;
-				if(result.Success){
-					window.location.replace('account_view.html');
-				} else {
-					var html = '';
-					html = 'Your order was not submitted for the following reasons:<br><ul>' + html;
-					var error = result['Errors'].Message;
-					if(error=='SubscriptionData.SubscriptionRatePlanData is required') error = 'You must select at least one product.';
-					if(error=='Missing required value: Name') error = 'Please enter your email address.';
-					html += '<li>' + error + '</li>';
-					html += '</ul>';
-					$('.error_message').html(html);
-					$("#infor").show();
-					displayNewIframe();
-				}
-			}
-       	}
-	);
-	*/
+		}
+}
+
+
+function createSubscription(ref_id){
+	
+	var uEmail = $('#email').val();
+	
+	$.ajax("/SubscribeWithCurrentCart",
+	{
+		data: { uemail: uEmail, pm_id: ref_id },
+		type: "GET",
+		dataType: 'json',
+		success: handleSubcsribeRes,
+		failure: displayNewIframe
+	});
+
 }
 
 function checkEmailAvailability(){
 	var uEmail = $('#email').val();
 	$(".email_avail").hide();
 	$(".email_unavail").hide();
-	/*
+	
 	if(uEmail.length>0){
-		$.getJSON("backend/index.php?type=CheckEmailAvailability", {uEmail: uEmail},
+		$.getJSON("/CheckEmailAvailability", {uemail: uEmail},
 			function(data){
-				var avail = data.msg[0];
+				var avail = data;
 				if(avail){
 					$(".email_avail").show();
 				} else {
@@ -137,7 +148,7 @@ function checkEmailAvailability(){
 			}
 		);
 	}
-	*/
+	
 }
 
 function hostedpagecallback_failure(errorCode, errorMessage, errorField_creditCardType, errorField_creditCardNumber,

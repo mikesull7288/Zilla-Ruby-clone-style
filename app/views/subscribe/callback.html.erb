@@ -1,0 +1,28 @@
+<% unless @error %>
+<script>
+function callback() {
+<% if (params['success'].present? && params['success'] == 'true') %>
+		parent.hostedpagecallback_success('<%= params['refId'] %>');
+<% else %>
+		parent.hostedpagecallback_failure('<%= params['errorCode'] %>',
+				'<%= params['errorMessage'] %>',
+				'<%= params['errorField_creditCardType'] %>',
+				'<%= params['errorField_creditCardNumber'] %>',
+				'<%= params['errorField_creditCardExpirationMonth'] %>',
+				'<%= params['errorField_creditCardExpirationYear'] %>',
+				'<%= params['errorField_cardSecurityCode'] %>',
+				'<%= params['errorField_creditCardHolderName'] %>'
+				);
+<% end %>
+}
+</script>
+
+<body onload="callback();"/>
+<div align="center">
+<br/><br/><br/>
+Please wait while this page loads...
+</div>
+
+<% else %>
+    Error: <%= @error %>
+<% end %>
