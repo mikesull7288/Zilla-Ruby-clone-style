@@ -139,8 +139,9 @@ function checkEmailAvailability(){
 	if(uEmail.length>0){
 		$.getJSON("/CheckEmailAvailability", {uemail: uEmail},
 			function(data){
+				alert(data[0].toSource());
 				var avail = data;
-				if(avail){
+				if(avail[0]){
 					$(".email_avail").show();
 				} else {
 					$(".email_unavail").show();	
