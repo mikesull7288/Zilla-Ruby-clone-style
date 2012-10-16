@@ -4975,7 +4975,7 @@ ul{
 
 .titleBox > h3{
     height: 39px;
-    background: url(../images/bg_title.png) repeat-x;
+    /*background: url(../images/bg_title.png) repeat-x;*/
     padding-left: 10px;
     line-height: 39px;
     font-size: 18px;

@@ -1,8 +1,12 @@
 RubyZilla::Application.routes.draw do
+  get "amend_controller/amend"
+
   get "account_manager/account_view"
+  get "account_manager/login"
 
   get "subscribe/subscribe"
   get "select_products/select_products"
+
   
   match "/ReadCatalog" => "select_products#read_catalog"
   match "/AddItemToCart" => "select_products#add_cart_item"
@@ -15,6 +19,9 @@ RubyZilla::Application.routes.draw do
   match "/CheckEmailAvailability" => "subscribe#check_email_availability"
   match "/SubscribeWithCurrentCart" => "subscribe#subscribe"
   match "/IsUserLoggedIn" => "account_manager#is_user_logged_in"
+  match "/GetCurrentSubscription" => "subscribe#get_current_subscription"
+  match "/TryLogin" => "account_manager#try_login"
+  #HPM stuffs
   match '/callback' => 'subscribe#callback'
   match '/subscription' => 'payment#subscription'
   

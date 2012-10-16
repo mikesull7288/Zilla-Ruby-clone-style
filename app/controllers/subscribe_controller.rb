@@ -1,5 +1,14 @@
 class SubscribeController < ApplicationController
 
+  def get_current_subscription
+    email = session[:email]
+    subs = ZillaBackend::SubscriptionManager.get_current_subscription(email)
+    respond_to do |format|
+      format.json { render :json => [subs] }
+      format.html { render :json => [subs] }
+    end
+  end
+
   def preview_current_cart
   	cart = session[:cart]
   	sub_preview = ZillaBackend::SubscriptionManager.preview_cart(cart)
@@ -33,6 +42,7 @@ class SubscribeController < ApplicationController
         email = params[:uemail]
         pm_id = params[:pm_id]
         cart = session[:cart]
+        session[:email] = email
         sub_res = ZillaBackend::SubscriptionManager.subscribe_with_current_cart(email, pm_id, cart)
         respond_to do |format|
           format.json { render :json => [sub_res] }

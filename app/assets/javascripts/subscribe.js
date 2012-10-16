@@ -21,7 +21,7 @@ function handlePreview(msg){
 		} else if(msg.error=='RATE_PLAN_EXPIRED'){
 			errorMessage = 'WARNING: One of your selected items is no longer being offered. Please remove it before continuing.';
 		}
-		alert( errorMessage );
+		alert( errorMessage );l
 	} 
 	else {
 		$('.subtotal_display').text("First Invoice Total Before Tax: $" +msg["invoice_amount"] );
@@ -139,7 +139,6 @@ function checkEmailAvailability(){
 	if(uEmail.length>0){
 		$.getJSON("/CheckEmailAvailability", {uemail: uEmail},
 			function(data){
-				alert(data.toSource());
 				var avail = data;
 				if(avail[0]){
 					$(".email_avail").show();

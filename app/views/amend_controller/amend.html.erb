@@ -1,0 +1,35 @@
+<% content_for :javascript_includes do %>
+  <%= javascript "amend.js" %>
+<% end %>
+<div id="web_main">
+  <div id="main" class="edit_dv">
+    <div id="left-main">
+      <div class="left-main inner">
+        <div class="title">
+          <h3>Select Products</h3>
+        </div>
+      </div>
+    </div>
+    <div id="right-sub">
+      <div class="right-sub inner current-subscription">
+        <div class="title">
+          <h3>Current Subscription</h3>
+          <span id="user_email"></span>
+        </div>
+        <ul class="chosen_plans">
+        </ul>
+      </div>
+      <div class="right-sub inner upcoming-changes">
+        <ul class="amendment_list">
+        </ul>
+      </div>
+      <div class="right-sub inner accept-change">
+        <h3>Accept Change</h3>
+        <span class='amendment-detail'>Please wait.</span>
+        <br />
+        <br />
+        <a href="javascript:" class="btn_submit item_button accept-amendment" >Accept</a>
+        <a href="javascript:" class="btn_submit item_button cancel-amendment" >Cancel</a> </div>
+    </div>
+  </div>
+</div>

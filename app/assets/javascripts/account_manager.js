@@ -1,18 +1,8 @@
 $(document).ready(function(){
-/*
-    $.getJSON("backend/index.php?type=IsUserLoggedIn",
-    function(data){
-        if(!data.success) {	
-            if(data.msg[0].msg=='SESSION_NOT_SET'){
-                window.location.replace('login.html');
-            }
-        }
-    });
-*/
     $.ajax("/IsUserLoggedIn", {
         type: "GET",
         dataType: 'json',
-        success: refreshCart,
+        success: redirectToLoginPage, 
         failure: addError
     });
     $('.add_pm').hide();
@@ -32,7 +22,10 @@ $(document).ready(function(){
 
     validateLoggedInEmail();
 });
-
+function redirectToLoginPage(data){
+    if(data != 'true')
+        window.location.replace('login');
+}
 //Send a request to validate that the email address exists. Upon a successful result, send requests to load all account summaries.
 function validateLoggedInEmail(){
     //When successful
@@ -142,12 +135,13 @@ var getSubscriptionSummary = function(){
     $('.subscription-summary-table').hide();
     $('.subscription-summary .loading').show();
 
-    $.getJSON("backend/index.php?type=GetLatestSubscription",
+    $.getJSON("/GetCurrentSubscription",
     function(data){
-    var subs = data.msg[0];
+    alert(data.toSource());
+    var subs = data[0];
 
     //Display Start Date of Subscription
-    $('.subscription_start_date').html(formatZDate(subs.startDate));
+    $('.subscription_start_date').html(formatZDate(subs["start_date"]));
 
     //Display active plans
     var html = "";
@@ -155,9 +149,9 @@ var getSubscriptionSummary = function(){
     var rp = subs.active_plans[i];
     html += "<li class='border_bottom_dashed'>";
                         html += " <div class='rateplan_info'>";
-                        html += " <span class='rateplan_name'>"+rp.ProductName+" : "+rp.Name+"</span><br>";
+                        html += " <span class='rateplan_name'>"+rp["product_name"]+" : "+rp["name"]+"</span><br>";
                         html += " <ul class='price_item_list' >";
-                        html += " <li class='price_item'><span class='price_item'>"+rp.Description+"</span></li>";
+                        html += " <li class='price_item'><span class='price_item'>"+rp["description"]+"</span></li>";
                         html += " </ul>";
     html += " </div>";
     html += " <div class='clear-block'></div>";

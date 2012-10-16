@@ -1,0 +1,2 @@
+module AmendControllerHelper
+end
