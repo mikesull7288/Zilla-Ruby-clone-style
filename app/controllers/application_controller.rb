@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  ZillaBackend::Config.initialize(username: "smogger914@yahoo.com", pass: "Zuora002", sandbox: true, logger: true)
+  ZillaBackend::Config.initialize(username: "mike.sullivan@z-dealermatch.com", pass: "Zuor@000", sandbox: true, logger: true)
 
   
 end
