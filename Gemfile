@@ -7,8 +7,8 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 
-gem 'zuora', git: 'https://github.com/zuorasc/zuora.git', branch: 'dealermatch', require: 'zuora'
-gem 'zillabackend', git: 'https://github.com/zuorasc/Zilla-RubyBackendGem.git', branch: 'dealermatch', require: 'zillabackend'
+gem 'zuora', git: 'https://github.com/mikesull7288/zuora.git', branch: 'dealermatch', require: 'zuora'
+gem 'zillabackend', git: 'https://github.com/mikesull7288/Zilla-RubyBackendGem.git', branch: 'dealermatch', require: 'zillabackend'
 gem 'uuidtools'
 # Gems used only for assets and not required
 # in production environments by default.
