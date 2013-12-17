@@ -55,9 +55,9 @@ var refreshCart = function(msg){
 		html+="<li class='border_bottom_dashed'>";
            html+="  <div class='rateplan_info'>";
 		html+="    <span class='rateplan_name'>"+citem["product_name"]+" : "+citem["rate_plan_name"]+"</span><br>";
-		if(citem["quantity"]!='null'){
-			html+="    <span class='rateplan_name'>"+citem["uom"]+": <input type='text' disabled='true' value='" +citem["quantity"]+ "' /></span><br>";
-		}
+		// if(citem["quantity"]!='null'){
+		// 	html+="    <span class='rateplan_name'>"+citem["uom"]+": <input type='text' disabled='true' value='" +citem["quantity"]+ "' /></span><br>";
+		// }
         html+="  </div>";
         html+="  <div class='clear-block'></div>";
         html+="</li>";

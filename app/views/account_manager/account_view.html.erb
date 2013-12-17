@@ -1,14 +1,17 @@
 <% content_for :javascript_includes do %>
   <%= javascript "account_manager.js" %>
 <% end %>
-<%= session %>
+<!-- <%= session %> -->
 <body>
 <div id="web_main">
     <div id="main" class="edit_dv">
         <noscript>
             <div class="error_message"> Javascript must be enabled to use this page. </div>
         </noscript>
-        
+        <br>
+        <div><h1>Sucess!</h1></div>
+        <div><h2>Thank you for Subscribing</h2></div>
+<!--         
         <div class="titleBox">
             <h3>Account Summary:</h3>
             
@@ -123,7 +126,7 @@
                 </table>
             </div>
         </div>
-
+ --><!-- 
         <div class="titleBox">
             <a href="/amend_controller/amend" class="btn_submit item_button change_plan floatRight" style="margin-top: 8px;margin-right: 8px;">Change Plan</a>
             <h3>Subscription Information:</h3>
@@ -150,7 +153,7 @@
                    </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 </body>

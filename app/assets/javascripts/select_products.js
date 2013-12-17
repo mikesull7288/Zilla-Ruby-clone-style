@@ -68,7 +68,7 @@ var addToCart = function(event){
 		{rate_plan_id:rpId, quantity:rpQty},
 		type: "GET",
 		dataType: 'json',
-		success: refreshCart,
+		success: subscribe,
 		failure: addError
 	});
 };
@@ -104,7 +104,7 @@ var addToCart = function(event){
 						html += "		<br># "+ rp["uom"] +": <input type='text' class='w80' id='qty_"+rp["id"]+"' value='1' onkeypress='return isNumberKey(event)' />";
 					html += "          </div>";
 					html += "          <div class='item_button_block'>";
-					html += "           <a href='javascript:' class='btn_submit item_button btn_add' id='"+rp["id"]+"' >Add</a>";
+					html += "           <a href='javascript:' class='btn_submit item_button btn_add' id='"+rp["id"]+"' >Select</a>";
 					html += "          </div>";
 					html += "          <div class='clear-block'></div>";
 					html += "        </li>";
@@ -122,6 +122,12 @@ var addToCart = function(event){
 			addToCart(event);
 		});
 	};
+
+	var subscribe = function(){
+
+		window.location.href = '/subscribe/subscribe';
+	}
+
 
 	var addError = function(emsg){
 
