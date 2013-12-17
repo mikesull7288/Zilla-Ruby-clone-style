@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/zuorasc/Zilla-RubyBackendGem.git
-  revision: f05ee5dbbe66e762dd73ff5a41c617e3035cdbcb
+  revision: 7c9b56e33bdfcc1989a8fc587109cfed358bc89e
   branch: dealermatch
   specs:
     zillabackend (0.0.0)
 
 GIT
   remote: https://github.com/zuorasc/zuora.git
-  revision: 92f4e6f29f8db141806387785eaa93e851d5c25b
+  revision: 26d44da7ee926866ab756bbc8c5c69417d07bfdb
   branch: dealermatch
   specs:
     zuora (0.0.1)
