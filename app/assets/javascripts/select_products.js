@@ -99,7 +99,7 @@ var addToCart = function(event){
 					html += "        <li class='border_bottom_dashed'><span class='clear-block'></span>";
 					html += "          <div class='rateplan_info' >";
 					html += "           <span class='rateplan_name'>"+rp["product_name"]+" : "+rp["name"]+"</span><br>";
-					html += "          	<span class='rateplan_description'>"+rp["description"]+"</span> ";
+					html += "          	<span class='rateplan_description'>"+rp["description"]+"<br><b>price: $ "+ rp["self_signup_price__c"] +"</b></span> ";
 					if(rp["quantifiable"])
 						html += "		<br># "+ rp["uom"] +": <input type='text' class='w80' id='qty_"+rp["id"]+"' value='1' onkeypress='return isNumberKey(event)' />";
 					html += "          </div>";

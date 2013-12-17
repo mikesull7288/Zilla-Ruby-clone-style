@@ -7,7 +7,8 @@ GIT
 
 GIT
   remote: https://github.com/zuorasc/zuora.git
-  revision: ef5410a3a1e57dc902718598e2b49b1f82686289
+  revision: 92f4e6f29f8db141806387785eaa93e851d5c25b
+  branch: dealermatch
   specs:
     zuora (0.0.1)
       activemodel (>= 3.0.0, < 4.0.0)
