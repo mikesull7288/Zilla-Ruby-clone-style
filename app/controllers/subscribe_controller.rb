@@ -40,10 +40,11 @@ class SubscribeController < ApplicationController
   def subscribe
     if (params[:pm_id].present?)
         email = params[:uemail]
+        name = params[:uname]
         pm_id = params[:pm_id]
         cart = session[:cart]
         session[:email] = email
-        sub_res = ZillaBackend::SubscriptionManager.subscribe_with_current_cart(email, pm_id, cart)
+        sub_res = ZillaBackend::SubscriptionManager.subscribe_with_current_cart(name, email, pm_id, cart)
         respond_to do |format|
           format.json { render :json => [sub_res] }
           format.html { render :json => sub_res }
