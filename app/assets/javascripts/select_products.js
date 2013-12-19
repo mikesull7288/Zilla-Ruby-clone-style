@@ -82,17 +82,17 @@ var addToCart = function(event){
 			var pgroup = data[pgroupKey];
 			
 			html += "<div class='panel-section'>";
-			html += " <h4 style='margin:15px 0 5px 0'>"+pgroup["name"]+"</h4>";
+			// html += " <h4 style='margin:15px 0 5px 0'>"+pgroup["name"]+"</h4>";
 			html += " <ul class='list_dv'>";
 			var products = pgroup.products;
 			for(var prodKey in products){
 				var prod = products[prodKey];
 				html += "<li> <span class='clear-block'></span>";
 				html += "    <div class='product'>";
-				html += "     <div class='c1'>";
-				html += "      <span class='product_name'>"+prod["name"]+"</span><br>";
-				html += "      <span class='product_description'>"+prod["description"]+"</span> ";
-				html += "     </div>";
+				// html += "     <div class='c1'>";
+				// // html += "      <span class='product_name'>"+prod["name"]+"</span><br>";
+				// // html += "      <span class='product_description'>"+prod["description"]+"</span> ";
+				// html += "     </div>";
 				html += "     <ul class='plan_list'>";
 				for(var rpKey in prod["rate_plans"]){
 					var rp = prod["rate_plans"][rpKey];

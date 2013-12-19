@@ -119,10 +119,11 @@ function handleSubcsribeRes(data){
 function createSubscription(ref_id){
 	
 	var uEmail = $('#email').val();
+	var uName = $('#company_name').val();
 	
 	$.ajax("/SubscribeWithCurrentCart",
 	{
-		data: { uemail: uEmail, pm_id: ref_id },
+		data: { uname: uName, uemail: uEmail, pm_id: ref_id },
 		type: "GET",
 		dataType: 'json',
 		success: handleSubcsribeRes,
