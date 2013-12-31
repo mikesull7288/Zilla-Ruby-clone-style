@@ -88,7 +88,7 @@ var addToCart = function(event){
 			for(var prodKey in products){
 				var prod = products[prodKey];
 				html += "<li> <span class='clear-block'></span>";
-				// html += "    <div class='product'>";
+				html += "    <div class='product'>";
 				// html += "     <div class='c1'>";
 				// // html += "      <span class='product_name'>"+prod["name"]+"</span><br>";
 				// // html += "      <span class='product_description'>"+prod["description"]+"</span> ";
@@ -98,7 +98,7 @@ var addToCart = function(event){
 					var rp = prod["rate_plans"][rpKey];
 					html += "        <li class='border_bottom_dashed'><span class='clear-block'></span>";
 					html += "          <div class='rateplan_info' >";
-					html += "           <span class='rateplan_name'>"+rp["product_name"]+" : "+rp["name"]+"</span><br>";
+					html += "           <span class='rateplan_name'>"+rp["name"]+"</span><br>";
 					html += "          	<span class='rateplan_description'>"+rp["description"]+"<br><b>price: $ "+ rp["self_signup_price__c"] +"</b></span> ";
 					if(rp["quantifiable"])
 						html += "		<br># "+ rp["uom"] +": <input type='text' class='w80' id='qty_"+rp["id"]+"' value='1' onkeypress='return isNumberKey(event)' />";
@@ -110,7 +110,7 @@ var addToCart = function(event){
 					html += "        </li>";
 				}
 				html += "        </ul>";
-				// html += "       </div>";
+				html += "       </div>";
 				html += "      </li>";
 			}
 			html += "    </ul>";
