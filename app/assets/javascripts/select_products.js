@@ -88,7 +88,7 @@ var addToCart = function(event){
 			for(var prodKey in products){
 				var prod = products[prodKey];
 				html += "<li> <span class='clear-block'></span>";
-				html += "    <div class='product'>";
+				// html += "    <div class='product'>";
 				// html += "     <div class='c1'>";
 				// // html += "      <span class='product_name'>"+prod["name"]+"</span><br>";
 				// // html += "      <span class='product_description'>"+prod["description"]+"</span> ";
@@ -110,7 +110,7 @@ var addToCart = function(event){
 					html += "        </li>";
 				}
 				html += "        </ul>";
-				html += "       </div>";
+				// html += "       </div>";
 				html += "      </li>";
 			}
 			html += "    </ul>";
