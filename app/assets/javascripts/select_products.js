@@ -2,7 +2,8 @@ $(document).ready(function(){
 	$("#infor").hide();
 	$(".loading").show();
 
-	getInitialCart();
+	// getInitialCart();
+	emptyCart();
 	
 	$.ajax("/ReadCatalog", {
 		type: "GET",
