@@ -45,7 +45,7 @@ class SelectProductsController < ApplicationController
   end
 
   def add_cart_item
-    cart = session[:cart]   
+    cart = session[:cart]   ||= ZillaBackend::Cart.new
     add_resp = cart.add_cart_item( params[:rate_plan_id], params[:quantity] )
     session[:cart] = cart
     respond_to do |format|

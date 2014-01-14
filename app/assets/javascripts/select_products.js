@@ -2,8 +2,9 @@ $(document).ready(function(){
 	$("#infor").hide();
 	$(".loading").show();
 
+	emptyCart();
 	getInitialCart();
-	
+
 	$.ajax("/ReadCatalog", {
 		type: "GET",
 		cache: false,
