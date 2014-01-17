@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mikesull7288/Zilla-RubyBackendGem.git
-  revision: 8cbea3b0f793d31a96d95aba4ac74197d95aa4de
+  revision: 2b15708dafbdcd8a8c0a188797e1cea8d47c747f
   branch: dealermatch
   specs:
     zillabackend (0.0.0)

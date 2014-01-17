@@ -23,7 +23,7 @@
 }
 
 body {
-     background: none repeat scroll 0% 0% #F4F4F4;
+     background: none repeat scroll 0% 0% #F4F4F2;
      color: #666666;
      font: 1.2em/20px "helvetica neue",Helvetica,Arial,Verdana,sans-serif;
      margin: 0pt;
@@ -4462,12 +4462,11 @@ A:hover {text-decoration:none}
 
 
 /*---------------------------------------------------------------*/
-/* HEADER
+/* HEADER 
 /*---------------------------------------------------------------*/
-/*#header .header-holder {background:#19292E url(../assets/karma-teal-grey/bg-header-holder.jpg) 0 0 repeat-x !important;}*/
-/*.big-banner #header .header-holder {background:#19292E url(../assets/karma-teal-grey/bg-big-header-holder.png) 0 0 repeat-x !important;}
-.top-block {background:#19292E !important;}*/
-#header .header-holder, .big-banner #header .header-holder, .top-block { background:#003478; }
+#header .header-holder {background:#19292E url(../assets/karma-teal-grey/bg-header-holder.jpg) 0 0 repeat-x !important;}
+.big-banner #header .header-holder {background:#19292E url(../assets/karma-teal-grey/bg-big-header-holder.png) 0 0 repeat-x !important;}
+.top-block {background:#19292E !important;}
 
 
 
@@ -4502,7 +4501,7 @@ A:hover {text-decoration:none}
 /*#menu-main-nav .drop .t {background:url(../images/_global/global-sprite.png) -960px -1782px no-repeat !important;}*/
 /*#menu-main-nav .drop .b {background:url(../images/_global/global-sprite.png) -960px -1793px no-repeat !important;}*/
 #menu-main-nav .drop .c, #menu-main-nav li.parent:hover {background:#111C20 !important;}
-/* IE only - un-comment for rounded corners
+/* IE only - un-comment for rounded corners 
 *:first-child+html #menu-main-nav li.parent:hover {background:url(../images/_global/global-sprite.png) -960px -1721px no-repeat !important;}
 *:first-child+html #menu-main-nav li.parent:hover {background-color: transparent !important;}
 *:first-child+html #menu-main-nav li.parent {min-width: 88px !important;width: auto !important;} */
@@ -4635,7 +4634,7 @@ a:hover {
     font-size: 12px;
     margin: 10px 0px 10px 137px;
     padding-left: 5px;
-    /*border: 1px solid #F00;*/
+    border: 1px solid #F00;
     background-color: #FDE0E2;
     line-height: 19px;
 }
@@ -4656,7 +4655,7 @@ a:hover {
 #web_main #main #left-main .left-main.inner {
     padding-right: 10px;
     padding-left: 10px;
-    /*border: 1px solid #CCCCCC;*/
+    border: 1px solid #CCCCCC;
 }
 
 #web_main #foot {
@@ -4725,10 +4724,8 @@ a:hover {
     text-align: center;
 }
 .title{
-	/*
     border-top: 1px solid #fff;
     border-left: 1px solid #fff;
-	*/
     border-bottom: 1px solid #CCCCCC;
     margin: 0 -10px 20px -10px;
 }
@@ -4737,10 +4734,9 @@ a:hover {
     /*background: url(../images/bg_title.png) repeat-x;*/
     padding-left: 10px;
     line-height: 39px;
-    font-size: 24px;
+    font-size: 18px;
     margin: 0;
     font-weight: normal;
-	color:#003478;
 }
 .panel-section label{
     display: inline-block;
@@ -4781,18 +4777,18 @@ input[type='text'], input[type='password']{
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    background:#ed662e;
+    background:#597276;
 }
 .item_button{
     /*width: 38px;*/
     height: 20px;
     line-height: 20px;
-    font-size: 11px;
+    font-size: 9px;
     text-align: center;
     padding-left: 8px;
     padding-right: 8px;
     margin-left: 0px;
-    font-weight: bold;
+    font-weight: normal;
 	position:relative
 }
 
@@ -4860,10 +4856,8 @@ ul{
 .list_dv > li{
     padding: 11px 12px;
     list-style: none outside none;
-	/*
     border: 1px solid #E6E6E6;
     border-left: 2px solid #597276;
-	*/
     background-color: #FAFAFA;
     margin-bottom: 15px;
 }
@@ -4891,7 +4885,7 @@ ul{
 
 .item_button_block{
     float: right;
-    width: 60px;
+    width: 40px;
     text-align: right;
 }
 .rateplan_info{
@@ -4910,8 +4904,6 @@ ul{
 }
 
 .rateplan_name{
-	font-size:14px;
-	color:#003478;
     font-weight: bold;
 }
 .rateplan_description{
